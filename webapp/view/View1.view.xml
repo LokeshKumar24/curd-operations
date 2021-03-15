@@ -1,0 +1,69 @@
+<mvc:View controllerName="ns.DEMOAPP.controller.View1" xmlns:core="sap.ui.core"
+ xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+                     <!-- <Table items="{/EMPLOYEESet}">
+                    <columns>
+                    <Column >
+                    <Text text="ID"></Text>
+                    </Column>
+                      <Column >
+                    <Text text="NAME"></Text>
+                    </Column>
+                      <Column >
+                    <Text text="DESIGNATION"></Text>
+                    </Column>
+                    </columns>
+                    <items>
+                      <ColumnListItem>
+                      <cells>
+                   <Text text="{Employeeid}"></Text>
+                             <Text text="{Employeename}"></Text>
+                              <Text text="{Employeedesignation}"></Text>
+                             </cells></ColumnListItem>
+                    </items>
+                    </Table> -->
+
+
+                    		<VBox alignContent="End" alignItems="End">
+							<Button icon="sap-icon://add" text="AddEmployee" id="idCreate" press="popUp"></Button>
+						</VBox>
+						<Table items="{odata>/EMPLOYEESet}" id="idTable" >
+							<columns>
+								<Column>
+									<Label text="ID"></Label>
+								</Column>
+								<Column>
+									<Label text="Name"></Label>
+								</Column>
+								<Column>
+									<Label text="Designation"></Label>
+								</Column>
+								<Column>
+									<Label text="Action"></Label>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<ObjectIdentifier title="{odata>Employeename}" text="{odata>Employeeid}"/>
+										<Text text="{odata>Employeename}"></Text>
+										<Text text="{odata>Employeedesignation}"></Text>
+										<HBox>
+											<Button icon="sap-icon://edit" id="idUpdate" press="onEdit"/>
+											<Label/>
+											<Button icon="sap-icon://delete" id="idDelete" press="onDelete" />
+										</HBox>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+                    </content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
